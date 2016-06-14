@@ -1,4 +1,4 @@
-﻿<#
+<#
 .Synopsis
    Validate a folder structure for Onedrive and/or Sharepoint sync compatibility.
 .DESCRIPTION
@@ -33,6 +33,7 @@
     Author:         Willem Kasdorp, Microsoft. 
     Creation Date:  6/8/2016
     Last modified:  6/14/2016
+    Blog:           https://blogs.technet.microsoft.com/389thoughts/2016/06/14/copying-many-files-to-onedrive-for-business-preventing-sync-errors/
 #>
 
 #requires -version 3
@@ -55,7 +56,7 @@ Param
     [Parameter(Mandatory=$false)]
     [switch]$CheckSize=$false,
 
-    # Output files that are OK for those people that want a complete report. 
+    # Show files that are OK for those people that want a complete report. 
     [Parameter(Mandatory=$false)]
     [switch]$IncludeOKFiles=$false
 )
@@ -172,3 +173,4 @@ foreach ($err in $FileError)
 # show summary outside the pipeline. 
 #
 Write-Host "Encountered $badfiles problematic files or folders" -ForegroundColor Cyan 
+
