@@ -1,3 +1,4 @@
+# WK 4/34/2018
 #
 # full disclosure: original is here: https://github.com/cyberark/RiskySPN/blob/master/Find-PotentiallyCrackableAccounts.ps1 
 #
@@ -5,7 +6,9 @@
 #
 # Get domain and preferred DC. Warn about limitations.
 #
-if ($domain.ChildDomains.Count -ne 0)
+$forest = Get-ADForest
+$domain = Get-ADDomain
+if ($forest.domains.Count -gt 1)
 {
     Write-Warning "This script does not properly handle cross-domain privileged users in the same forest"
 }
