@@ -30,13 +30,13 @@ The output will allow you to determine deviations:
 [CmdletBinding()]
 Param(
     # use this wildcard to select subscriptions
-    [String] $subscriptionWildcard = "*vdc1*",
+    [String] $subscriptionWildcard = "*",
     # put this to $false to receive the status of all objects.
     [switch] $showOnlyConnectedObjects = $false,
     # specify the object type wildcard;
     [string] $objectTypeWildcard = "*",
     # output file in CSV format.
-    [string] $outputfileName = ".\oms-connections-vdc1.csv"
+    [string] $outputfileName = ".\oms-connections.csv"
 )
 
 #
